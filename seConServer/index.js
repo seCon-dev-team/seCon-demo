@@ -1,14 +1,38 @@
 var express = require('express');
 var app = express();
 
+var sessions = require("client-sessions");
+app.use(sessions({
+  cookieName: 'mySession', // cookie name dictates the key name added to the request object
+  secret: 'blargadeeblargblarg', // should be a large unguessable string
+  duration: 24 * 60 * 60 * 1000, // how long the session will stay valid in ms
+  activeDuration: 1000 * 60 * 5 // if expiresIn < activeDuration, the session will be extended by activeDuration milliseconds
+}));
 
 
 
+//Global Vars
 var ServerName="localhost:3000"
 numberOfPeddingPix=7;
 
+
+
+
+app.use(function(req, res, next) {
+  if (req.mySession.seenyou) {
+    res.setHeader('X-Seen-You', 'true');
+  } else {
+    // setting a property will automatically cause a Set-Cookie response
+    // to be sent
+    req.mySession.seenyou = true;
+    res.setHeader('X-Seen-You', 'false');
+    res.send();
+  }
+});
+/////////////////////////////////////// APIs //////////////////////////////////////////////////////////////
 app.get('/seConLogin/:userName', function (req, res)
  {
+   
   //Extract data from the db in order to check the user existence
   //var queryResult= query the mongoDB
   //  if(req.params.userName== queryResult){res.send('{success:'+queryResult+'}');}
@@ -19,14 +43,15 @@ app.get('/seConLogin/:userName', function (req, res)
 
 
 /*
-login to seCon.
-api: "api/seCon/auth"
-method: POST
-payload: { userName(string), password(string) }
-response: success: "ok", fail:"wrong password!"
-on success: getClickableImages api call dispatched.
-
+  API description-    
+    login to seCon.
+    api: "api/seCon/auth"
+    method: POST
+    payload: { userName(string), password(string) }
+    response: success: "ok", fail:"wrong password!"
+    on success: getClickableImages api call dispatched.
 */
+
 app.get('/api/seCon/auth', function (req, res) {
 	//Extract data from the db in order to check the user existence
   //var queryResult= query the mongoDB
@@ -34,6 +59,7 @@ app.get('/api/seCon/auth', function (req, res) {
   //if((req.params.userName== queryResult.userName) && (req.params.password== queryResult.password))
     {
       var queryResult=callForImages();
+      console.log(queryResult);
       res.send('{success:'+queryResult+'}');
       
     }
