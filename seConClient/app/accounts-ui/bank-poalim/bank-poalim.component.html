@@ -1,0 +1,584 @@
+<img src="/CAClientPages/ca/newLogin_files/images/bgT.png" id="bg" class="menuOpRES" alt="opacity" style="display:none">
+<div class="cookieClass" style="display:block">
+  <div class="cookieClassText cookieClassTextcontainer" >
+    <span class="firsText">לידיעתך:</span>
+    <span class="secondText">אנו משתמשים בעוגיות באתר זה</span>
+    <span class="dirFor"></span>
+    <span class="moreText" tabindex="2">
+        <a href="//www.bankhapoalim.co.il/wps/portal/PoalimPrivate/products?WCM_GLOBAL_CONTEXT=poalim+-+content/PoalimSite/SiteArea_SherutLekohot/cookies
+          ">למידע נוסף</a></span>
+    <span class="cliseT" tabindex="1" >סגור</span>
+  </div>
+</div>
+<div class="container" id="forBgId" >
+
+
+  <div class="placeH" id="otpBizz" style="display:none" >
+
+    <img src="/CAClientPages/ca/newLogin_files/images/bgT.png" id="bg" alt="opacity">
+
+    <div class="popupTable" >
+      <div class="popupTableChild">
+        <div class="whiteBg">
+          <div class="verSpace">
+            <div class="btn-x" onclick="bizzLoginPage.closePopup('otpBizz');"></div>
+          </div>
+          <div>
+            <h3 class="titleW">
+              פועלים באינטרנט לעסקים
+            </h3>
+          </div>
+          <div class="clear"></div>
+        </div>
+        <div class="bodyPop">
+          <table  class="errorStyle form-errors"  style="display:none" cellspacing="0" cellpadding="0" role="alert">
+            <tr>
+              <td></td>
+              <td style="vertical-align: top;width: 85px;">לתשומת לבך:</td>
+              <td id="errorMessage"></td>
+            </tr>
+            <tr>
+              <td colspan="3"></td>
+            </tr>
+          </table>
+          <div class="fgCl" style="color:#414b67">
+            פועלים לשמור על חשבונך
+          </div>
+          <div class="fgClass5">
+            <div> קוד האימות נשלח כעת לסלולרי שלך  <span class="loginOTP"></span> </div>
+            <div> אנא הקלד את הקוד ולחץ 'כניסה לחשבונך' . </div>
+
+            <div style="margin-top:15px">קוד אימות</div>
+            <div> <input aria-label="אנא הקלד את הקוד ולחץ על המשך" class="form-control" style="width: 153px" name="code" id="codeForOtp" size="10" maxlength="7"  onkeyup="bizzLoginPage.checkForErrors();" onfocusout="bizzLoginPage.checkForErrors();" type="text" aria-describedby="otp-live" autocomplete="off" autofocus  > </div>
+            <div class="btnTextOtp" style="margin-top:10px">לא קיבלת את הקוד? לחץ לקבלת הקוד פעם נוספת ב-<span class="bizSMS" onclick='bizzLoginPage.firstTimeOtp = false;bizzLoginPage.sendOtpInit("s"); '>SMS</span> או <span class="bizVoice" onclick='bizzLoginPage.firstTimeOtp = false;bizzLoginPage.sendOtpInit("v"); '>  בהודעה קולית</span></div>
+            <div style="height: 14px;">
+              <div class="fadeOutText" id="fadeOutText" id="otp-live" aria-live="polite" style="display:none" >
+                <div class="icon-v-greenBiz"></div>
+                <div>קוד האימות נשלח אליך פעם נוספת. אנא המתן לקבלתו.</div>
+              </div>
+              <div class="userLockedOtp" id="userLocked" style="display:none" role="alert" >
+                <div class="icon-exclamation-mark-redBiz"></div>
+                <div style="width: 86%;">עקב הקלדה שגויה מספר פעמים, האפשרות לקבלת קוד האימות נחסמה למשך שעה. תוכל לבקש קוד חדש בעוד כשעה.</div>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+        <div class="wizard-step-footer wizard-step-footer2" style="background: #f5f5f5;">
+          <div>
+            <input value="חזור" id="buttonYes" onclick="bizzLoginPage.closePopup('otpBizz');" style="min-width: 51px !important;background: none;	padding-left: 10px;" class="button btn3  btn8" style="background-image:none" type="button">
+            <input class="button btn3 btn8" style="color: #c30019;float:left" value="כניסה לחשבונך"  onclick="bizzLoginPage.continueMy();" id="buttonNo" disabled="disabled" type="button">
+            <div style="clear: both"></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="row" style="margin-top:2.6%" >
+    <div class="rowUp">
+      <div class="menu" id="myTopmenu">
+
+        <div class="serviceSupport">
+          <a href="#" onclick="getTmichaLinkMewPoalim();">
+            שירות ותמיכה
+          </a>
+        </div>
+        <div class="CommonMistakes">
+          <a href="#" onclick="openCode(&#39;taoot&#39;);">
+            טעויות נפוצות
+          </a>
+        </div>
+        <div class="AccessConditions">
+          <a href="#" onclick="openCode(&#39;gisha&#39;);">
+            תנאי גישה
+          </a>
+        </div>
+        <div class="GeneralSafeBrowsing">
+          <a href="#" onclick="openCode(&#39;secure&#39;);">
+            כללי גלישה בטוחה
+          </a>
+        </div>
+        <div class="icon" style="display:none" >
+          <a href="javascript:void(0);" onclick="resMenu()">☰</a>
+        </div>
+      </div>
+      <div class="logo" id="bannerS">
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div class="bigImage">
+      <div id="bannerFromShivuki" class="mainBannerSection">
+        <div class="developerBannerPlaceH">
+        </div>
+        <div class="developerBanner">
+        </div>
+        <div class="grad"></div>
+      </div>
+      <div class="tableFormContainer">
+        <div class="rowForm">
+          <div class="columnForm">
+            <div class="LoginForm">
+              <div class="LoginFormTop"></div>
+              <div class="LoginFormMiddele">
+                <div class="loginTitle">
+                  <h1 id="enterToAcountText" >
+                    כניסה לחשבונך
+                  </h1>
+                </div>
+                <div id="virtualKeyBoard">
+                  <a href="#" title=""  id="virtualKeyBoardToolTip" >
+                      <span >
+                        <div class="arrow-div">
+                          מקלדת וירטואלית מאפשרת להקליד את פרטי הזיהוי ללא שימוש במקלדת המחוברת למחשב.
+                          שיטת הזדהות זו מספקת רמת אבטחה גבוהה יותר.
+                        </div>
+                      </span>
+                  </a>
+                </div>
+                <div id="loginContent"  class="loginWrapper gardiantForm">
+                  <form name="mainform" action="#" method="post" class="mainForm" autocomplete="off">
+                    <input type="hidden" name="callme" value="">
+                    <input type="hidden" name="Main" value="">
+                    <input type="hidden" name="Language" value="">
+                    <input type="hidden" name="bsd" value="">
+                    <input type="hidden" name="Demo" value="">
+                    <input type="hidden" name="authType" value="">
+                    <input type="hidden" name="flow" value="">
+                    <input type="hidden" name="state" value="">
+                    <input type="hidden" name="identifier" value="">
+                    <input type="hidden" name="organization" value="106402333">
+                    <input type="hidden" name="InstituteCode" value="106402333">
+                    <input type="hidden" name="MFP" value="">
+                    <input type="hidden" name="IpAddress" value="">
+                    <input type="hidden" name="CallerID" value="">
+                    <input type="hidden" name="DeviceID" value="">
+                    <input type="hidden" name="deviceDNA" value="">
+                    <input type="hidden" name="executionTime" value="">
+                    <input type="hidden" name="csrffield" value="">
+
+                    <div class="formFrame">
+                      <div class="mainErrSection">
+                        <div id="err_Mf" class="errHide">
+                          <a href="javascript:void(0)" id="emptyLinkForFocus"></a>
+                          <h2 class="offscreen">הודעות מערכת</h2>
+                          <div class="counterErr">
+                            <span id="errImgRectangle" class="errImgBig" style=""></span>
+                            <span id="errImgCounter" class="errImgSmall" style="display:none"></span>
+                            <script type="text/javascript">
+                              var logonRetryCounter = '';
+
+                              switch(logonRetryCounter)
+                              {
+                                case "1":
+                                  document.getElementById("errImgCounter").style.background="url(/CAClientPages/ca/newLogin_files/standards/cssImages/pageSpecific/logon/err_1.png) top right no-repeat";
+                                  break;
+                                case "2":
+                                  document.getElementById("errImgCounter").style.background="url(/CAClientPages/ca/newLogin_files/standards/cssImages/pageSpecific/logon/err_2.png) top right no-repeat";
+                                  break;
+                                case "3":
+                                  document.getElementById("errImgCounter").style.background="url(/CAClientPages/ca/newLogin_files/standards/cssImages/pageSpecific/logon/err_3.png) top right no-repeat";
+                                  break;
+                                case "4":
+                                  document.getElementById("errImgCounter").style.background="url(/CAClientPages/ca/newLogin_files/standards/cssImages/pageSpecific/logon/err_4.png) top right no-repeat";
+                                  break;
+                                default:
+                                  document.getElementById("errImgRectangle").style.background="";
+                                  document.getElementById("errImgCounter").style.background="";
+                              }
+
+
+                            </script>
+                          </div>
+                          <div class="errText" role="alert">
+                            <ul>
+                              <li class="err1" title="הודעת שגיאה">
+                              </li>
+                              <li class="err2" >
+                                למידע נוסף על <a href="https://www.bankhapoalim.co.il/wps/portal/PoalimPrivate/products?WCM_GLOBAL_CONTEXT=Poalim%20-%20Content/poalimsite/sitearea_sherutlekohot/accountloginsa/accountlogin&proceed=1" target="_blank" class="err_Link">טעויות נפוצות בכניסה לחשבון</a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div style="clear:both"></div>
+                      </div>
+                      <div id="formLogin" >
+                        <div  class="loginFields">
+                          <div id="welcomeText">
+                            <div  id="hello" style="display:none"></div>
+                            <div id="otherUser" >
+
+                              <a id="notTheUser" onclick="arcot.setUsernameTextBox(); $('#err_Mf').slideUp();"  href="#"></a>
+                            </div>
+                            <div style="clear:both"></div>
+                          </div>
+                          <div class="wrapperInputsContent">
+                            <div id="errMessageUserID"  class="errTextUp" role="alert">נא להקליד קוד משתמש</div>
+                            <div id="userIdContent" class="inputContent">
+                              <input class="vk inputStyle bgInputBox_watermark loginFieldOne" type="text" autocomplete="off" tabindex="3" id="userID" name="userid" maxlength="14" value="" placeholder="קוד משתמש" aria-label="קוד משתמש" />
+                              <div class="toolTipsContainer" >
+                                <a href="#" title="" id="questionIconUserId" class="questionIcon iconloginFieldOne"  >
+                                    <span>
+                                      <div class="arrow-div">
+                                        קוד המשתמש מורכב מ-6 עד 14 תווים המכילים ספרות ואותיות באנגלית.
+                                      </div>
+                                    </span>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="wrapperInputsContent">
+                            <div id="errMessageUserPassword" class="errTextUp" role="alert"></div>
+                            <div class="inputContent">
+                              <input name="fakePass1" type="password"  value=""   style="visibility:hidden;    height: 0;position:absolute" tabindex="-1" />
+                              <input class="vk inputStyle bgInputBox_watermark loginFieldTwo" type="password" autocomplete="off" tabindex="5" id="userPassword" name="credentials2" value="" maxlength="14" placeholder="סיסמה" aria-label="סיסמה" />
+                              <input name="credentials" type="password" style="display:none" value="" />
+                              <input name="fakePass2" type="password"  value=""  style="visibility:hidden;    height: 0;position:absolute" tabindex="-1" />
+                              <div class="toolTipsContainer" >
+                                <a href="#" title="" class="questionIcon iconloginFieldTwo" style="top: 14px;">
+                                    <span>
+                                      <div class="arrow-div">
+                                        הסיסמה מורכבת מ- 8 עד 14 תווים המכילים ספרות ואותיות באנגלית.
+                                        <br>
+                                        לתשומת לבך, יש משמעות לגודל האותיות.
+                                      </div>
+                                    </span>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="SignBtn" >
+                            <input onclick="arcot.processSubmit();return false; return sendToServer(this);" tabindex="6" id="inputSend"  type="submit"  value=""  >
+                          </div>
+                          <div style="line-height: normal;">
+                            <img id="ajaxLoader" border="0" src="/CAClientPages/ca/newLogin_files/images/ajaxloader.gif" style="display:none" width="16" height="16">
+                          </div>
+                        </div>
+                        <div class="toolTipsContainer" >
+                          <a href="javascript:void(0);" class="tooltipForgot_1" >
+                              <span>
+                                <div class="arrow-div">
+                                  <p class="toolTipTitle">החלפת קוד משתמש</p>
+                                  אם אינך זוכר את קוד המשתמש שלך, ניתן לשחזרו ב'פועלים בטלפון'- 2407* (לבעלי קוד סודי קבוע לשירות הטלפוני) או בכל אחד מסניפי בנק הפועלים.
+                                </div>
+                              </span>
+                          </a>
+                        </div>
+                        <!-- הצטרפות -->
+                        <div id="join" class="content" style="display: none;">
+                          <h2>אנו מזמינים אותך להצטרף ל"פועלים באינטרנט" באמצעות האתר.</h2>
+                          <p>
+                            ההצטרפות תאפשר לך לקבל מידע על חשבונותיך.<br>
+                            לביצוע פעולות ב-'פועלים באינטרנט' עליך לפנות לסניפך.
+                          </p>
+                          <h2>לתשומת לבך:</h2>
+                          <ul>
+                            <li>להוספת חשבונות חדשים למנויים קיימים עליך לפנות לאחד מסניפי הבנק.</li>
+                          </ul>
+                          <h2>איך מצטרפים לשירות באמצעות האינטרנט?</h2>
+                          <ul class="blockListSection">
+                            <li>1.   לחיצה על כפתור "המשך" תציג בפניך את הסכם השירות.</li>
+                            <li>2.   לאחר קריאת הסכם השירות, יתבצע תהליך רישום הכולל מילוי פרטים אישיים ופרטי חשבונותיך.</li>
+                            <li>3.   בסיום ההרשמה תוצג לך סיסמה ראשונית, קוד המשתמש יישלח אליך בדואר ישראל בתוך כשבוע.</li>
+                            <li>4.   עם קבלת קוד המשתמש והסיסמה האישית, תוכל להכנס לאתר ולצפות במידע על החשבונות שצירפת לשירות.</li>
+                          </ul>
+                          <div class="goNextWrapper">
+                            <a  href="javascript:void(0);" class="goNext" onclick="ContinueToHisztarfut()"><span>המשך</span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <input type="hidden" name="saInput" value="86911393326005843">
+                      <input type="hidden" name="saInputStaus">
+                      <input type="hidden" name="saInputProtocol" value="http">
+                      <input type="hidden" name="saFlash" value="true">
+                      <script type="text/javascript" language="javascript">
+                        var flashEnabled = false;
+                        try {
+                          var playerVersion = swfobject.getFlashPlayerVersion();
+                          var output = "ver. "+playerVersion.major+"."+playerVersion.minor+"."+playerVersion.release;
+                          if (parseInt(playerVersion.major) <10)
+                            flashEnabled = false;
+                          else
+                            flashEnabled = true;
+                        }
+                        catch(e){
+                        }
+                        //document.logon.saFlash.value = flashEnabled;
+
+
+                      </script>
+                      <!-- סיסמה -->
+                      <div id="passwordJoin" class="content" style="display: none;">
+                        <div  class="wizard-circles">
+                          <div class="tabbable">
+                            <ul id="bread" class="nav nav-circles clearfix" >
+                              <li id="headerStepTd_1" class="headerStepNotSelected active" >
+                                  <span>
+                                  פרטי זיהוי
+                                  </span>
+                              </li>
+                              <li id="headerStepTd_2"  class="headerStepNotSelected pre-active" >
+                                  <span>
+                                  אימות
+                                  </span>
+                              </li>
+                              <li id="headerStepTd_3" class="headerStepNotSelected pre-active" ><span>
+                                  בחירת סיסמה
+                                  </span>
+                              </li>
+                              <li id="headerStepTd_4"  class="headerStepSelected pre-active" >
+                                  <span>
+                                  סיום
+                                  </span>
+                              </li>
+                            </ul>
+                            <div class="tab-content">
+                              <div class="tab-pane active">
+                                <div class="wizard-step-content">
+                                  <section>
+                                    <section class="form-errors" style="display: none; ">
+                                      <div id="errMessageUserID2"  class="errTextUpFMP message-dir" role="alert"></div>
+                                    </section>
+                                    <div id="forIframesParent">
+                                      <div class="wizard-content-group" >
+                                        <h3></h3>
+                                        <div class="wizard-input-comment-bottom">
+                                          <div>
+                                            כדי להפיק סיסמה, אנא מלא את הפרטים הבאים:
+                                          </div>
+
+                                        </div>
+                                      </div>
+                                      <div class="wizard-content-group">
+                                        <div class="pull-right depositInterestsWidth">
+                                          <div class="wizard-input-group">
+                                            <label for="userIDFmp">קוד המשתמש שלך:</label>
+                                            <input class="vk inputStyle bgInputBox_watermark form-control" aria-label="קוד משתמש" autocomplete="off" tabindex="3"  id="userIDFmp" name="userid" maxlength="14" value=""  type="text">
+                                            <div class="wizard-input-comment-bottom">
+                                              הקלד 6-14 תווים המכילים ספרות ואותיות באנגלית
+                                            </div>
+                                          </div>
+                                          <div class="wizard-input-group">
+                                            <label for="PartyIDFmp" class="PartyIDFmpLab">מספר תעודת הזהות (9 ספרות) / הדרכון שלך (16 ספרות ואותיות):</label>
+                                            <input class="vk inputStyle2 bgInputBox_watermark form-control" aria-label="מספר תעודת הזהות" autocomplete="off" tabindex="4" id="PartyIDFmp" name="partyid" maxlength="16" value=""  type="text" />
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div id="forFmp" style="display:none"></div>
+                                  </section>
+                                </div>
+                                <div class="wizard-step-footer">
+                                  <div class="pull-left beforeBtns ">
+                                    <a tabindex="5" href="javascript:void(0);"  class="button btn3" id="forgatPassM" >המשך</a>
+                                    <script>
+                                      $('#forgatPassM').bind('click keyup',
+                                        function(e){
+                                          var eType = e.type;
+                                          if (eType == 'click' || (eType == 'keypress' && e.which == 13)) {
+                                            setStepupFMP();
+                                          }
+                                        });
+
+
+
+                                      var userid = "",partyid="";
+
+                                      function setStepupFMP(){
+                                        //showPasswordForm();
+                                        userid = $("#userIDFmp").val();
+                                        partyid = $("#PartyIDFmp").val();
+
+                                        if(userid != "" && userid.length >= 6 && userid.length <= 14 && partyid.length > 1 && partyid.length <= 16 &&  partyid !="" ){
+
+                                          $("#forFmp").html("<iframe  class='frameStepup'  id='frameStepup' border='no'  allowfullscreen scrolling='no' style='overflow: hidden;' src='/stepup/start?flow=fmp&state=start' ></iframe>");
+
+
+
+                                        }
+                                        else if (userid == "" )
+                                        {
+
+                                          $(".errTextUpFMP").html("אנא הקלד קוד משתמש");
+                                          $(".form-errors").css("display","block");
+                                          $("#userIDFmp").addClass("vkValidateError");
+
+                                        }
+                                        else if (partyid == "" )
+                                        {
+
+                                          errorMsg.displayMsg("60");
+                                          $(".form-errors").css("display","block");
+                                          $("#PartyIDFmp").addClass("vkValidateError");
+                                        }
+                                        else if (userid.length < 6 )
+                                        {
+
+                                          $(".errTextUpFMP").html("עליך להזין לפחות  6 תווים בשדה קוד משתמש");
+                                          $(".form-errors").css("display","block");
+                                          $("#userIDFmp").addClass("vkValidateError");
+                                        }
+
+                                        //else
+                                        //{
+
+                                        //errorMsg.displayMsg("61");
+                                        //$(".form-errors").css("display","block");
+                                        //$("#userIDFmp,#PartyIDFmp").addClass("vkValidateError");
+
+                                        //}
+                                      }
+
+                                    </script>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="shadow"></div>
+                            </div>
+                          </div>
+                          <div class="logopoalim pull-left"></div>
+                          <div class="clear"></div>
+                        </div>
+                      </div>
+                      <!-- join הצטרפות -->
+                      <div id="frameJoinDiv" class="contentFromInput" style="display: none;">
+                        <iframe title="חידוש סיסמה" id="iframeHiztarfoot" src="/CAClientPages/ca/newLogin_files/bnhpNullPage.htm" height="525" width="100%" frameborder="0" scrolling="Auto"></iframe>
+                      </div>
+                    </div>
+                  </form>
+                  <div class="smallText" >
+                    <a id="fmpLink" onclick="setLayer();" href="javascript:forgotYourPassFromInput();">
+                      נחסמה / שכחת סיסמתך ?
+                    </a>
+                    <script>
+                      function setLayer(){
+
+                        $('#dialogFMP').dialog({
+                          show:'fade',
+                          modal : true,
+                          resizable:false,
+                          draggable: false,
+                          position:{ my:'center',at: 'top'}
+                        });
+                        return false;
+                      }
+                    </script>
+                  </div>
+                </div>
+              </div>
+              <div class="LoginFormBottom">
+                <div class="bttomOfLogin">
+                  <a id="enterToIski" href="https://biz.bankhapoalim.co.il/cgi-bin/poalwwwc?&language=HE&reqName=getLogonIski&comeFrom=1" target="_top" class="linkToIski">
+                    כניסה ללקוחות עסקיים
+                  </a>
+                  <div id="enterToDemo" style="display:none;">
+                    <a  href="//login.bankhapoalim.co.il/authenticate/logon/demo"  class="linkToIski">כניסה לחשבון הדגמה</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div  id="callMeSection" class="columnForm callMeSectionLeft"  >
+            <div class="callMeSectionRad">
+              <div class="blockUser">
+                <div class="blockedOrForgotten" >
+                  <div class="bTitle"> נחסמה / שכחת סיסמתך?</div>
+                  <div class="bText">תוכל להפיק סיסמה חדשה למידע ופעולות בלי לצאת מהבית</div>
+                  <div class="bBtn" onclick="setScreenWidth(); forgotYourPassFromInput();">הפקת סיסמה חדשה</div>
+                </div>
+                <div class="wantAbanker">
+                  <div id="helpCaption">רוצה לדבר עם בנקאי?</div>
+                  <div>
+                    <div>
+                      <div id="help" >
+                        <div>
+                          <div class="callMe">
+                              <span class="call" id="callT" >
+                                <div class="styled-select" id="areaCodeIdT">
+                                  <select name="areaCode" style="display:block" id="areaCodeId" class="areaCodeId" dir="rtl" onchange="areaCodeValue=this.options[this.selectedIndex].value; window.ereaCodeChoosen=this.selectedIndex;"  title="" >
+                                    <option value="">בחר</option>
+                                    <option value="02">02</option>
+                                    <option value="03">03</option>
+                                    <option value="04">04</option>
+                                    <option value="08">08</option>
+                                    <option value="09">09</option>
+                                    <option value="072">072</option>
+                                    <option value="073">073</option>
+                                    <option value="074">074</option>
+                                    <option value="076">076</option>
+                                    <option value="077">077</option>
+                                    <option value="050">050</option>
+                                    <option value="052">052</option>
+                                    <option value="053">053</option>
+                                    <option value="054">054</option>
+                                    <option value="055">055</option>
+                                    <option value="058">058</option>
+                                    <option value="059">059</option>
+                                  </select>
+                                </div>
+                                <span class="select">בחר</span>
+                              </span>
+                            <span class="fieldcall">
+                              <input type="text" name="phoneNumber" id="phoneNumberId" size="4" maxlength="7" onkeypress="return checkPhoneNumber(this,event);"  onchange="phoneNumberValue=this.value" placeholder="הקלד מספר טלפון" aria-label="הקלד מספר טלפון" onfocus"document.getElementById('areaCodeIdT').style.display='block';document.getElementById('captchOpen').style.display='block';if(isIE ()==9){$(this).removeClass('misparTelephone')}"   class="inputSpaceForPhone" />
+                              </span>
+                            <div class="callMe_after"></div>
+                          </div>
+                          <div class="captchOpen" id="captchOpen" style="display: block;">
+                            <div class="refreshC" ><img id="captchaImg" align="right" src="#" width="105" height="32" border="0" /><span onclick="refreshCaptcha();" class="refresTh" > </span></div>
+                            <div>
+                              <input type="text" id="captchaChallenge" name="captchaChallenge" size="13" maxlength="6" class="inputSpace"  aria-label="הקלד את קוד האבטחה" placeholder="הקלד את קוד האבטחה" onfocus="if(isIE ()==9){$(this).removeClass('kodAvtaha')}"/>
+                            </div>
+                            <input name="YESBUTTON" id="Web_connectId" class="bBtn btnMM"  type="button" value="לחץ לשיחת חינם" onclick="javascript:getData('sendPhonenumber'); return false;" alt="לחץ לשיחת חינם" title=""  >
+                          </div>
+                        </div>
+                      </div>
+                      <div style="display: none; text-align: center;" id="help_Text">
+                        <p><strong>הלאש לכב,</strong></p>
+                        <p><strong>טנרטניאה תכימת דקומל תונפל ןתינ</strong></p>
+                        <p><strong>2409 ןופלט*</strong></p>
+                      </div>
+                      <div  class="mainTitle" id="helpCaption"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style=" display:none" id="bsdText" >
+        <div style="line-height: 12px;">לקוח נכבד,</div>
+        <ul>
+          <li>לחיצה על חלק מהקישורים באתר מובילה לאתר בנק הפועלים הכללי ואתרי אינטרנט נוספים, שיכולים לכלול תמונות ותכנים שאינם כולם מותאמים לקהל הדתי חרדי. </li>
+          <li>כדי ליהנות מעושר המידע והכלים באתר הבנק הכשר -  יש לבטל את מצב ה"גלישה בסתר"  (PRIVATE MODE). </li>
+        </ul>
+      </div>
+    </div>
+    <div class="rowDown" id="rowDown" style="display:none">
+      <div>
+        <a href="https://login.bankhapoalim.co.il" target="_blank">כניסה ללקוחות פרטיים</a>
+      </div>
+      <div class="rowDownDev"></div>
+      <div>
+        <a href="https://itraders.co.il/Mabat/" target="_blank">מערכת מבט</a>
+      </div>
+      <div class="rowDownDev"></div>
+      <div>
+        <a href="https://agee.itraders.co.il" target="_blank">מערכת מסחר חיצונית</a>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div style="display:none;text-align: right;direction: rtl;" id="dialogFMP">
+    <strong>
+      זמנית לא ניתן להפיק סיסמה באתר ובאפליקציה.
+      להפקת סיסמה חדשה אנא פנה לפועלים בטלפון 2407*, לסניף או בכל אחד ממכשירי הבנקט של בנק הפועלים.
+    </strong>
+  </div>
+  <b id="clear-2both"></b></div>

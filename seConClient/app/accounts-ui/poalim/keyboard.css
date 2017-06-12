@@ -1,0 +1,132 @@
+/* keyboard - jQuery UI Widget */
+.ui-keyboard { 
+	background: #fff;
+	  line-height: 1;
+	border: solid 1px #BFBFBF;
+	-webkit-box-shadow: 1px 2px 3px rgba(0,0,0,0.29);
+    -moz-box-shadow: 1px 2px 3px rgba(0,0,0,0.29);
+    box-shadow: 1px 2px 3px rgba(0,0,0,0.29);
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+	position: absolute;
+	padding:30px 10px 10px 10px;
+	direction:ltr;
+}
+.ui-keyboard  .ui-state-default{
+  font-size: 16px;
+}
+.ui-keyboard-input.ui-widget-content{
+border:none ;
+background: none;
+
+}
+.ui-keyboard-has-focus { z-index: 16001; }
+.ui-keyboard div {   font-size: 16px; }
+.ui-keyboard-button {
+	background: white;
+	border: solid 1px #ddd;
+	padding: 0;
+	font-family:  arial;
+	color: #5B5B5B;
+	border-radius: 0;
+	height: 21px;
+	width: 21px;
+	margin: 0 4px 5px 0;
+	cursor: pointer;
+	overflow: hidden;
+	  font-size: 16px;
+	box-shadow: 1px 1px 3px #ccc;
+}
+.ui-keyboard-button span { padding: 0; margin: 0; white-space:nowrap;  font-size: 16px;text-align:center }
+.ui-keyboard-button-endrow { clear: left; }
+.ui-keyboard-widekey {   width: 50px; }
+.ui-keyboard-space { width: 15em; text-indent: -999em; }
+.ui-keyboard-preview-wrapper { text-align: center; }
+.ui-keyboard-preview { text-align: left; margin: 0 0 3px 0; display: inline; width: 99%;} /* width is calculated in IE, since 99% = 99% full browser width =( */ 
+.ui-keyboard-keyset { text-align: center; }
+.ui-keyboard-input { text-align: left; }
+.ui-keyboard-input-current { 
+	-moz-box-shadow: 1px 1px 10px #fa0;
+	-webkit-box-shadow: 1px 1px 10px #fa0;
+	box-shadow: 0px 0px 3px #fa0;
+}
+.ui-keyboard-placeholder { color: #888; }
+.ui-keyboard-nokeyboard { color: #888; border-color: #888; } /* disabled or readonly inputs, or use input[disabled='disabled'] { color: #f00; } */
+.ui-keyboard-button.disabled { opacity: 0.5; filter: alpha(opacity=50); } /* used by the acceptValid option to make the accept button appear faded */
+
+.ui-keyboard-close,
+.ui-keyboard-en,
+.ui-keyboard-he {
+	border: none !important;
+	visibility: visible;
+	position: absolute;
+	z-index: 1;
+	top: -4px;
+    left: 1px;
+	width: 22px !important;
+	height: 22px !important;
+	font-size: 12px;
+	background: none!important;
+	box-shadow: none !important;
+	
+}
+.ui-keyboard-close:after {
+	content:"x";
+	position: absolute ;
+	z-index: 2;
+	color:#595959 !important;
+    top: 8px;
+    left: 10px;	
+}
+
+.ui-state-active {
+	/*background: #D20;
+	color: white;
+	border-color: #D20;*/
+}
+
+.ui-state-hover {
+	background: #D20;
+	border-color: #333;
+	color:#fff;
+	zoom:1;
+}
+
+.ui-keyboard-close:hover {
+	/*
+	font-size:0.01em !important;
+	*/
+	background: none !important;
+}
+
+.ui-keyboard-he,
+.ui-keyboard-en {
+	top: 10px;
+	width: 19px !important;
+	height: 19px !important;
+	background: transparent url(standards/cssImages/components/virtualKeyboard/hebtn.png) no-repeat center;
+	left: auto !important;
+	right: 30px;
+}
+.ui-keyboard-en {
+	background: transparent url(standards/cssImages/components/virtualKeyboard/enbtn.png) no-repeat center;
+	right: 10px;
+}
+
+.ui-keyboard-spacer { 
+	display: inline-block; 
+	visibility:hidden; 
+	width: 1px; 
+	height: 1px !important; 
+}
+/*=================================*/
+
+#mainFormLogin {
+	position: relative;
+	z-index: 1;
+}
+
+.redError {
+	border:solid 2px red !important
+}

@@ -4,15 +4,38 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { DemoWelcomeComponent } from './main/login-flow/demo-welcome/demo-welcome.component';
+import { BankPoalimComponent } from './accounts-ui/bank-poalim/bank-poalim.component';
+import { GenericLoginComponent } from './main/login-flow/generic-login/generic-login.component';
+import { LoginFlowComponent } from './main/login-flow/login-flow.component';
+import { SeconLoginComponent } from './main/login-flow/secon-login/secon-login.component';
+import { SeconVerifyComponent } from './main/login-flow/secon-verify/secon-verify.component';
+import { MainComponent } from './main/main.component';
+import {appRoutes} from "./routes";
+import {RouterModule} from "@angular/router";
+import { SeconSiteComponent } from './secon-site/secon-site.component';
+import { SeconRefererComponent } from './common/secon-referer/secon-referer.component';
+import { GenericLoginSuccesComponent } from './main/login-flow/generic-login-succes/generic-login-succes.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DemoWelcomeComponent,
+    BankPoalimComponent,
+    GenericLoginComponent,
+    LoginFlowComponent,
+    SeconLoginComponent,
+    SeconVerifyComponent,
+    MainComponent,
+    SeconSiteComponent,
+    SeconRefererComponent,
+    GenericLoginSuccesComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot(appRoutes, { useHash: true })
   ],
   providers: [],
   bootstrap: [AppComponent]
