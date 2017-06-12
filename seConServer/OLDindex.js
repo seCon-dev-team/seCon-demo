@@ -1,14 +1,7 @@
 var express = require('express');
 var app = express();
+
 var sessions = require("client-sessions");
-
-
-
-//Global Vars
-var ServerName="localhost:3000"
-numberOfPeddingPix=7;
-
-
 app.use(sessions({
   cookieName: 'mySession', // cookie name dictates the key name added to the request object
   secret: 'blargadeeblargblarg', // should be a large unguessable string
@@ -17,23 +10,29 @@ app.use(sessions({
 }));
 
 
-app.use('/seConLogin/:userName',function(req, res, next) {
+
+//Global Vars
+var ServerName="localhost:3000"
+numberOfPeddingPix=7;
+
+
+
+
+app.use(function(req, res, next) {
   if (req.mySession.seenyou) {
     res.setHeader('X-Seen-You', 'true');
-    res.setHeader('Location', '/api/seCon/auth');
   } else {
     // setting a property will automatically cause a Set-Cookie response
     // to be sent
-   // req.mySession.seenyou = true;
+    req.mySession.seenyou = true;
     res.setHeader('X-Seen-You', 'false');
     res.send();
   }
-   res.send();
 });
 /////////////////////////////////////// APIs //////////////////////////////////////////////////////////////
 app.get('/seConLogin/:userName', function (req, res)
  {
-   console.log('s');
+   
   //Extract data from the db in order to check the user existence
   //var queryResult= query the mongoDB
   //  if(req.params.userName== queryResult){res.send('{success:'+queryResult+'}');}
