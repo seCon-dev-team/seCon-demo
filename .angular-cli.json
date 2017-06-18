@@ -5,7 +5,7 @@
   },
   "apps": [
     {
-      "root": "src",
+      "root": "seConClient",
       "outDir": "dist",
       "assets": [
         "assets",

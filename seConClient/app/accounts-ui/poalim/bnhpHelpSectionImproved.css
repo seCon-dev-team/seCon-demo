@@ -1,0 +1,234 @@
+p{
+	padding: 0;
+	margin: 0;
+ }
+ 
+.takalaMsgImproved {
+	  font-size: 19px;
+	text-align: center;
+}
+
+.rightSpaceImproved {
+	padding: 0 8px 0 0;	
+}
+
+.callCenterTable{
+	width: 214px;
+	border: 1px solid #D6DBE1; 
+}
+
+.wrapperAllTitle{
+
+	height: 30px;
+	background: #EDF0F5;
+	border-bottom: 1px solid #D6DBE1; 
+}
+
+.mainTitle{
+	border: 0px solid green;
+}
+
+.gardiantStyle{																		
+	/*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#FFFFE7, endColorstr=#FDFCC4);*/			/* For Internet Explorer 5.5 - 7 */ 
+	/*-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#FFFFE7, endColorstr=#FDFCC4)";*/ 	/* For Internet Explorer 8 */	
+	/*background: -moz-linear-gradient(top, #FFFFE7, #FDFCC4);*/												/* For Mozilla/Gecko (Firefox etc) */
+	/*background: -webkit-gradient(linear, left top, left bottom, from(#FFFFE7), to(#FDFCC4));*/				/* For WebKit (Safari, Google Chrome etc) */
+	/*width: 100%;*/
+}
+
+.wrapperContent{
+	border: 0px solid cyan; 
+	text-align: right; 
+	margin: 10px 7px 0 0;
+}
+
+.space5{
+	padding: 0 0 5px 0;
+}
+
+.space10{
+	padding: 0 0 10px 0;
+}
+
+.spaceUp10{
+	padding: 10px 0 0 0;
+}
+
+.mainText{
+	border: 0px solid red; 
+	/*display: none;*/ 
+	width: 100%; 
+	height: 140px; 
+	padding: 10px 0 0 0;
+}
+
+.speakWithBankai{
+	font-weight: bold; 
+	/*font-size: 1.2em;*/
+}
+
+.enterPhoneNum{
+	padding: 5px 0 0 0;
+}
+
+.inputSpace{
+	direction: ltr;
+	width: 95%;
+	font-family: arial;
+	font-size: 1.2em;
+	background: none;
+	float: left;
+	color: #003366;
+	margin: 6px 0 0 5px;
+	border: 0px solid #8CA7C2;
+}
+
+.inputSpaceForPhone {
+	direction: ltr;
+	width: 95%;
+	font-family: arial;
+
+	background: none;
+	float: left;
+	margin: 7px 0 0 5px;
+	color: #003366;
+	border: 0px solid #8CA7C2;
+}
+
+.selectAreaCode{
+	font-family: arial;
+	border: 1px solid #8CA7C2;
+}
+
+.callYouNow{
+
+	padding: 0 0 5px 0;
+}
+				
+.getRight{
+	float: right;
+}
+
+.buttonSend{
+	clear: both; 
+	padding: 8px 0 14px 0;
+}
+
+.redStar{
+	color: #C60000;
+}
+
+.Web_ConnectBefor{
+	background: url(/standards/cssImages/pageSpecific/logon/send.png) no-repeat; 
+	cursor: pointer; 
+	border: 0px; 
+	width: 203px; 
+	height: 35px;
+	float: left;
+	margin: 0 0 0 8px;
+	border: 0px solid green;
+}
+
+.Web_ConnectAfter{
+	background: url(/standards/cssImages/pageSpecific/logon/sendHover.png) no-repeat; 
+	cursor: pointer; 
+	border: 0px; 
+	width: 203px; 
+	height: 35px;
+	float: left;
+	margin: 0 0 0 8px;
+	border: 0px solid green;
+}
+
+.anyQuestion{
+	border: 1px solid #D6DAE3; 
+	text-align: center; 
+	width: 195px; 
+	font-weight: bold; 
+	display: none;
+}
+
+.wrapperApology{
+	border: 0px solid green; 
+	width: 170px;
+}
+
+.peilutMoked{
+
+}
+				
+.wrapperBankiCallYou{
+	border: 0px solid green; 
+	width: 140px;
+}
+
+.dakot{
+	
+	padding: 10px 0 15px 0;
+}
+
+.dakotNeto{
+	padding: 0 0 0 5px;
+}
+
+
+.wrapperCallYouNow{
+	border: 0px solid green; 
+	width: 70px;
+}
+
+.callYouText{
+text-align:center;
+font-size:18px
+}
+
+.wrapperError{
+	border: 0px solid green; 
+	width: 125px;
+}
+				
+.ErrorText{
+	
+}
+
+.wrapperOmes{
+	border: 0px solid green; 
+	width: 140px;
+}
+
+/***************** For selectBox call me************************/
+
+.call{
+	position: relative;
+	border: 0px solid green;
+} 
+ 
+.call select.select {
+	position: relative;
+	z-index: 10;
+	width: 58px !important;
+	height: 31px !important;
+	line-height: 31px;
+	
+	border: 0px solid green;
+}
+
+.call span.select {
+	position: absolute;
+	top:0;
+	left: 1px;
+	width: 60px;
+	height: 31px;
+	line-height: 31px;
+	text-indent: 8px;
+	background:url(/standards/cssImages/pageSpecific/logon/Phone-button.png) no-repeat 0 0;
+	cursor: default;
+	z-index: 1;
+	display: inline-block;
+	
+	text-align: center;
+	padding-left: 7px;
+	border: 0px solid orange;
+}
+
+/***********************************************/
