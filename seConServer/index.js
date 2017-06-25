@@ -1,7 +1,8 @@
 var express = require('express');
 var app = express();
 var sessions = require("client-sessions");
-
+var bodyParser = require('body-parser')
+var mongo = required('mongodb');
 
 
 //Global Vars
@@ -16,6 +17,16 @@ app.use(sessions({
   activeDuration: 1000 * 60 * 5 // if expiresIn < activeDuration, the session will be extended by activeDuration milliseconds
 }));
 */
+app.use( bodyParser.json() );       // to support JSON-encoded bodies
+app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+  extended: true
+}));
+app.use(express.json());       // to support JSON-encoded bodies
+app.use(express.urlencoded()); // to support URL-encoded bodies
+
+//------------------------------End Initialization--------------------------
+
+
 
 app.use('/seConLogin/:userName',function(req, res, next) {
   if (req.mySession.seenyou) {
@@ -54,9 +65,15 @@ app.get('/seConLogin/:userName', function (req, res)
 */
 
 /*******************************************************************Done*************************************/
-app.get('/api/seCon/auth', function (req, res) {
+
+
+app.post('/api/seCon/auth', function (req, res) {
 	//Extract data from the db in order to check the user existence
-  //var queryResult= query the mongoDB
+  var userName=req.body.userName;
+  var password=req.body.password;
+  var queryResult= query the mongoDB
+
+
 
   //if((req.params.userName== queryResult.userName) && (req.params.password== queryResult.password))
     {
