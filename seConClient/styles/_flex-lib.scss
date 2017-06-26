@@ -1,0 +1,89 @@
+.flex-item {
+  display: flex;
+  position: relative;
+}
+
+.flex-item-row {
+  flex-direction: row;
+  @extend .flex-item;
+  &.half{
+    -webkit-flex: 1 0 0;
+    flex: 1 0 0;
+  }
+}
+
+.flex-item-row-reverse {
+  flex-direction: row-reverse;
+  @extend .flex-item;
+}
+
+.flex-item-column {
+  flex-direction: column;
+  @extend .flex-item;
+  &.half{
+    -webkit-flex: 1 0 0;
+    flex: 1 0 0;
+  }
+}
+
+.flex-item-stretch {
+  flex: 1;
+  position: relative;
+
+}
+
+[flex-item-adjust="center"],
+[flex-item-adjust="center center"],
+[flex-item-adjust="center start"],
+[flex-item-adjust="center end"] {
+  justify-content: center;
+}
+
+[flex-item-adjust="end"],
+[flex-item-adjust="end center"],
+[flex-item-adjust="end start"],
+[flex-item-adjust="end end"] {
+  justify-content: flex-end;
+}
+
+[flex-item-adjust="space-around"],
+[flex-item-adjust="space-around center"],
+[flex-item-adjust="space-around start"],
+[flex-item-adjust="space-around end"] {
+  justify-content: space-around;
+}
+
+[flex-item-adjust="space-between"],
+[flex-item-adjust="space-between center"],
+[flex-item-adjust="space-between start"],
+[flex-item-adjust="space-between end"] {
+  justify-content: space-between;
+}
+
+[flex-item-adjust="center center"],
+[flex-item-adjust="start center"],
+[flex-item-adjust="end center"],
+[flex-item-adjust="space-between center"],
+[flex-item-adjust="space-around center"] {
+  align-items: center;
+}
+
+[flex-item-adjust="center start"],
+[flex-item-adjust="start start"],
+[flex-item-adjust="end start"],
+[flex-item-adjust="space-between start"],
+[flex-item-adjust="space-around start"] {
+  align-items: flex-start;
+}
+
+[flex-item-adjust="center end"],
+[flex-item-adjust="start end"],
+[flex-item-adjust="end end"],
+[flex-item-adjust="space-between end"],
+[flex-item-adjust="space-around end"] {
+  align-items: flex-end;
+}
+
+.flex-stretch {
+  align-items: stretch;
+}

@@ -1,0 +1,58 @@
+html{
+  font-size: 10px;
+  font-family: Arial;
+}
+
+.rtl{direction: rtl;}
+
+.pad-xs{padding: 0.5rem;}
+
+.pad-l-xs{padding-left: 0.5rem;}
+.pad-r-xs{padding-right: 0.5rem;}
+.pad-lr-xs{@extend .pad-l-xs; @extend .pad-r-xs;}
+
+.pad-t-xs{padding-top: 0.5rem;}
+.pad-b-xs{padding-bottom: 0.5rem;}
+.pad-tb-xs{@extend .pad-t-xs; @extend .pad-b-xs;}
+
+
+.pad-sm{padding: 1rem;}
+
+.pad-l-sm{padding-left: 1rem;}
+.pad-r-sm{padding-right: 1rem;}
+.pad-lr-sm{@extend .pad-l-sm; @extend .pad-r-sm;}
+
+.pad-t-sm{padding-top: 1rem;}
+.pad-b-sm{padding-bottom: 1rem;}
+.pad-tb-sm{@extend .pad-t-sm; @extend .pad-b-sm;}
+
+
+.pad-med{padding: 1.5rem;}
+
+.pad-l-med{padding-left: 1.5rem;}
+.pad-r-med{padding-right: 1.5rem;}
+.pad-lr-med{@extend .pad-l-med; @extend .pad-r-med;}
+
+.pad-t-med{padding-top: 1.5rem;}
+.pad-b-med{padding-bottom: 1.5rem;}
+.pad-tb-med{@extend .pad-t-med; @extend .pad-b-med;}
+
+
+.pad-lrg{padding: 2.5rem;}
+
+.pad-l-lrg{padding-left: 2.5rem;}
+.pad-r-lrg{padding-right: 2.5rem;}
+.pad-lr-lrg{@extend .pad-l-lrg; @extend .pad-r-lrg;}
+
+.pad-t-lrg{padding-top: 2.5rem;}
+.pad-b-lrg{padding-bottom: 2.5rem;}
+.pad-tb-lrg{@extend .pad-t-lrg; @extend .pad-b-lrg;}
+
+.font-10{font-size: 1rem;}
+.font-12{font-size: 1.2rem;}
+.font-14{font-size: 1.4rem;}
+.font-16{font-size: 1.6rem;}
+.font-18{font-size: 1.8rem;}
+.font-20{font-size: 2rem;}
+.font-22{font-size: 2.2rem;}
+
