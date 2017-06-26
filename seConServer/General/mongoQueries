@@ -1,0 +1,50 @@
+> db.Users.insert([{"userName":"Avig","email":"avig@xxx.com","password":"123456","uniqueWord":"Hacker"}])
+BulkWriteResult({
+        "writeErrors" : [ ],
+        "writeConcernErrors" : [ ],
+        "nInserted" : 1,
+        "nUpserted" : 0,
+        "nMatched" : 0,
+        "nModified" : 0,
+        "nRemoved" : 0,
+        "upserted" : [ ]
+})
+> db.Users
+test.Users
+> db.Users.find()
+{ "_id" : ObjectId("594cb5bf40c3598329f486c5"), "userName" : "Avig", "email" : "avig@xxx.com", "password" : "123456", "uniqueWord" : "Hacker" }
+> db.Users.find().preety()
+2017-06-23T09:32:18.302+0300 E QUERY    [thread1] TypeError: db.Users.find(...).preety is not a function :
+@(shell):1:1
+> db.Users.find().prrety()
+2017-06-23T09:32:30.341+0300 E QUERY    [thread1] TypeError: db.Users.find(...).prrety is not a function :
+@(shell):1:1
+> db.Users.find().pretty()
+{
+        "_id" : ObjectId("594cb5bf40c3598329f486c5"),
+        "userName" : "Avig",
+        "email" : "avig@xxx.com",
+        "password" : "123456",
+        "uniqueWord" : "Hacker"
+}
+> db.userSessions.insert([{"email":"avig@xxx.com","sessions":["Poalim","Makabi"]}])
+BulkWriteResult({
+        "writeErrors" : [ ],
+        "writeConcernErrors" : [ ],
+        "nInserted" : 1,
+        "nUpserted" : 0,
+        "nMatched" : 0,
+        "nModified" : 0,
+        "nRemoved" : 0,
+        "upserted" : [ ]
+})
+> db.userSessions.find().pretty()
+{
+        "_id" : ObjectId("594cb72440c3598329f486c6"),
+        "email" : "avig@xxx.com",
+        "sessions" : [
+                "Poalim",
+                "Makabi"
+        ]
+}
+>

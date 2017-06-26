@@ -12,8 +12,6 @@
   },
   "private": true,
   "dependencies": {
-    "express": "^4.15.3",
-    "client-sessions": "0.8.0",
     "@angular/common": "^2.4.0",
     "@angular/compiler": "^2.4.0",
     "@angular/core": "^2.4.0",
@@ -22,7 +20,10 @@
     "@angular/platform-browser": "^2.4.0",
     "@angular/platform-browser-dynamic": "^2.4.0",
     "@angular/router": "^3.4.0",
+    "body-parser": "^1.17.2",
+    "client-sessions": "0.8.0",
     "core-js": "^2.4.1",
+    "express": "^4.15.3",
     "rxjs": "^5.1.0",
     "zone.js": "^0.7.6"
   },
@@ -43,6 +44,8 @@
     "protractor": "~5.1.0",
     "ts-node": "~2.0.0",
     "tslint": "~4.5.0",
-    "typescript": "~2.0.0"
+    "typescript": "~2.0.0",
+    "kerberos": "~0.0.17",
+    "mongodb": "~2.0.33"
   }
 }

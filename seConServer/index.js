@@ -1,20 +1,31 @@
 var express = require('express');
 var app = express();
 var sessions = require("client-sessions");
-
+var bodyParser = require('body-parser')
+var mongo = required('mongodb');
 
 
 //Global Vars
 var ServerName="localhost:3000"
 numberOfPeddingPix=7;
 
-
+/*
 app.use(sessions({
   cookieName: 'mySession', // cookie name dictates the key name added to the request object
   secret: 'blargadeeblargblarg', // should be a large unguessable string
   duration: 24 * 60 * 60 * 1000, // how long the session will stay valid in ms
   activeDuration: 1000 * 60 * 5 // if expiresIn < activeDuration, the session will be extended by activeDuration milliseconds
 }));
+*/
+app.use( bodyParser.json() );       // to support JSON-encoded bodies
+app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+  extended: true
+}));
+app.use(express.json());       // to support JSON-encoded bodies
+app.use(express.urlencoded()); // to support URL-encoded bodies
+
+//------------------------------End Initialization--------------------------
+
 
 
 app.use('/seConLogin/:userName',function(req, res, next) {
@@ -53,13 +64,20 @@ app.get('/seConLogin/:userName', function (req, res)
     on success: getClickableImages api call dispatched.
 */
 
-app.get('/api/seCon/auth', function (req, res) {
+/*******************************************************************Done*************************************/
+
+
+app.post('/api/seCon/auth', function (req, res) {
 	//Extract data from the db in order to check the user existence
-  //var queryResult= query the mongoDB
+  var userName=req.body.userName;
+  var password=req.body.password;
+  var queryResult= query the mongoDB
+
+
 
   //if((req.params.userName== queryResult.userName) && (req.params.password== queryResult.password))
     {
-      var queryResult=callForImages();
+      var queryResult=callForImage();
       console.log(queryResult);
       res.send('{success:'+queryResult+'}');
       
@@ -68,6 +86,8 @@ app.get('/api/seCon/auth', function (req, res) {
  // res.send('{failed: user '+queryResult+' does not exist}');
  // res.send('Hello World!');
 })
+/*******************************************************************END*************************************/
+
 
 app.get('/avi/:id', function (req, res) {
 	
@@ -83,29 +103,46 @@ app.listen(3000, function () {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 //////////////////////////////////////FUNCTIONS///////////////////////////////
 //This function provides array of 9 elements ,every element is an img url
-function callForImages()
+function callForImage()
 {
   return getRandomImgMap();
 }
 
-//return imgMAP (urls)
+//return imgMAP
 function getRandomImgMap()
 {
   var ImgDictionary;//local folder translation 1/1.jpg circle pix 
-  var imgKeyurl; //the pix which need to be pressed 
+  var imgKeyurl; //the pix which need to be pressed
+  var NumOfPixsUnderEveryFolder=2; 
   var myObj;
 
-  myObj = {"questionKey":"","Imgurls":[]};
-  ImgDictionary={"circle":"1", "square":"2"};
+  myObj = {"questionKey":"","Imgurl":""}; 
+  ImgDictionary={"Coffe":"1",
+                 "Ice Creame":"2"};
   
-  myObj.questionKey= GetMAPquestionKey(); //the query for what to look/press within the ImgMap (ex- press over the pix which contains circle)
-  imgKeyurl=ServerName+"/imgMAP/"+ImgDictionary[myObj.questionKey]+"/1.png";
-  myObj.Imgurls=getPeddingImglist();
   
-  myObj=blendImg(myObj,imgKeyurl);
+  var tempquestionkey=GetMAPquestionKey();
+  imgKeyurl=ServerName+"/imgMAP/"+ImgDictionary[tempquestionkey]+"/"+Math.floor(Math.random() * NumOfPixsUnderEveryFolder)+".png";
+  myObj.questionKey= "Please click over the pictures which involved with "+tempquestionkey; //the query for what to look/press within the ImgMap (ex- press over the pix which contains coffe)
+  myObj.Imgurl=imgKeyurl;
 
+
+  //getPeddingImglist();
+  //myObj=blendImg(myObj,imgKeyurl);
   //blending the Imgurls with the imgKeyurl and saving the imgKeyurl position into the db
 
   return myObj;
@@ -113,7 +150,7 @@ function getRandomImgMap()
 
 function GetMAPquestionKey()
 {
-  var questionKeyArr = ["circle", "square"];
+  var questionKeyArr = ["Coffe", "Ice Creame"];
   var questionKey = questionKeyArr[Math.floor(Math.random() * questionKeyArr.length)];
   return questionKey;
 }
@@ -180,5 +217,9 @@ npm install nodemon -g
 
 install express
 npm install express --save
+
+
+//correct errors-
+ npm install -g npm@latest
 
 */
