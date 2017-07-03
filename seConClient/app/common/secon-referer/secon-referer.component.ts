@@ -24,7 +24,7 @@ export class SeconRefererComponent implements OnInit {
   }
 
   sendSeconUserName(){
-    //todo - open dialog only after api success
-    this.display = true;
+    //todo - emit event only after api success
+    this.seconUsernameAuthSuccess.emit(this.seconUsername);
   }
 }
