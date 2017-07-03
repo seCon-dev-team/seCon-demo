@@ -48,6 +48,54 @@ html{
 .pad-b-lrg{padding-bottom: 2.5rem;}
 .pad-tb-lrg{@extend .pad-t-lrg; @extend .pad-b-lrg;}
 
+.mar-xs{margin: 0.5rem;}
+
+.mar-l-xs{margin-left: 0.5rem;}
+.mar-r-xs{margin-right: 0.5rem;}
+.mar-lr-xs{@extend .mar-l-xs; @extend .mar-r-xs;}
+
+.mar-t-xs{margin-top: 0.5rem;}
+.mar-b-xs{margin-bottom: 0.5rem;}
+.mar-tb-xs{@extend .mar-t-xs; @extend .mar-b-xs;}
+
+
+.mar-sm{margin: 1rem;}
+
+.mar-l-sm{margin-left: 1rem;}
+.mar-r-sm{margin-right: 1rem;}
+.mar-lr-sm{@extend .mar-l-sm; @extend .mar-r-sm;}
+
+.mar-t-sm{margin-top: 1rem;}
+.mar-b-sm{margin-bottom: 1rem;}
+.mar-tb-sm{@extend .mar-t-sm; @extend .mar-b-sm;}
+
+
+.mar-med{margin: 1.5rem;}
+
+.mar-l-med{margin-left: 1.5rem;}
+.mar-r-med{margin-right: 1.5rem;}
+.mar-lr-med{@extend .mar-l-med; @extend .mar-r-med;}
+
+.mar-t-med{margin-top: 1.5rem;}
+.mar-b-med{margin-bottom: 1.5rem;}
+.mar-tb-med{@extend .mar-t-med; @extend .mar-b-med;}
+
+
+.mar-lrg{margin: 2.5rem;}
+
+.mar-l-lrg{margin-left: 2.5rem;}
+.mar-r-lrg{margin-right: 2.5rem;}
+.mar-lr-lrg{@extend .mar-l-lrg; @extend .mar-r-lrg;}
+
+.mar-t-lrg{margin-top: 2.5rem;}
+.mar-b-lrg{margin-bottom: 2.5rem;}
+.mar-tb-lrg{@extend .mar-t-lrg; @extend .mar-b-lrg;}
+
+.pointer{
+  cursor: pointer;
+}
+
+
 .font-10{font-size: 1rem;}
 .font-12{font-size: 1.2rem;}
 .font-14{font-size: 1.4rem;}

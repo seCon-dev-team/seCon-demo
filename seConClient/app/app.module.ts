@@ -16,6 +16,9 @@ import {RouterModule} from "@angular/router";
 import { SeconSiteComponent } from './secon-site/secon-site.component';
 import { SeconRefererComponent } from './common/secon-referer/secon-referer.component';
 import { GenericLoginSuccesComponent } from './main/login-flow/generic-login-succes/generic-login-succes.component';
+import {DialogModule} from "primeng/primeng";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+
 
 @NgModule({
   declarations: [
@@ -32,12 +35,17 @@ import { GenericLoginSuccesComponent } from './main/login-flow/generic-login-suc
     GenericLoginSuccesComponent
   ],
   imports: [
+    BrowserAnimationsModule,
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(appRoutes, { useHash: true })
+    RouterModule.forRoot(appRoutes, { useHash: true }),
+    DialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
+

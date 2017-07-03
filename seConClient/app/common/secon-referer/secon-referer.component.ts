@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-secon-referer',
@@ -7,9 +7,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SeconRefererComponent implements OnInit {
 
-  constructor() { }
+  private showSeconUsernameInput: boolean = false;
+  private display: boolean = false;
+  private seconUsername: string = '';
+
+  @Output() seconUsernameAuthSuccess = new EventEmitter();
+
+  constructor() {
+  }
 
   ngOnInit() {
   }
 
+  showSeconUserNameInput(){
+    this.showSeconUsernameInput = true;
+  }
+
+  sendSeconUserName(){
+    //todo - open dialog only after api success
+    this.display = true;
+  }
 }
