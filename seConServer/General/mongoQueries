@@ -1,3 +1,9 @@
+commands-
+	cmd->startServer->mongod --dbpath C:\Users\avi\Documents\GitHub\seCon-demo\seConServer\Data
+	cmd->querymongo->>mongo
+
+
+
 > db.Users.insert([{"userName":"Avig","email":"avig@xxx.com","password":"123456","uniqueWord":"Hacker"}])
 BulkWriteResult({
         "writeErrors" : [ ],

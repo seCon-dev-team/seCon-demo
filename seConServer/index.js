@@ -2,12 +2,15 @@ var express = require('express');
 var app = express();
 var sessions = require("client-sessions");
 var bodyParser = require('body-parser')
-var mongo = required('mongodb');
+var mongodb = require('mongodb');
 
 
 //Global Vars
 var ServerName="localhost:3000"
-numberOfPeddingPix=7;
+var numberOfPeddingPix=7;
+
+
+
 
 /*
 app.use(sessions({
@@ -17,18 +20,23 @@ app.use(sessions({
   activeDuration: 1000 * 60 * 5 // if expiresIn < activeDuration, the session will be extended by activeDuration milliseconds
 }));
 */
-app.use( bodyParser.json() );       // to support JSON-encoded bodies
-app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
-  extended: true
-}));
-app.use(express.json());       // to support JSON-encoded bodies
-app.use(express.urlencoded()); // to support URL-encoded bodies
+//app.use( bodyParser.json() );       // to support JSON-encoded bodies
+//app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+  //extended: true
+//}));
+//app.use(express.json());       // to support JSON-encoded bodies
+//app.use(express.urlencoded()); // to support URL-encoded bodies
 
 //------------------------------End Initialization--------------------------
 
 
+/*
 
 app.use('/seConLogin/:userName',function(req, res, next) {
+  
+
+
+
   if (req.mySession.seenyou) {
     res.setHeader('X-Seen-You', 'true');
     res.setHeader('Location', '/api/seCon/auth');
@@ -40,10 +48,35 @@ app.use('/seConLogin/:userName',function(req, res, next) {
     res.send();
   }
    res.send();
-});
+});*/
 /////////////////////////////////////// APIs //////////////////////////////////////////////////////////////
 app.get('/seConLogin/:userName', function (req, res)
  {
+   
+   var MongoClient = require('mongodb').MongoClient;
+    var url = 'mongodb://localhost:27017/Secon';
+
+    MongoClient.connect(url,function(err,db){
+      if(err){console.log('unable to connect to the server',err);}
+      else
+      {
+        console.log("Connection Established");
+        var collection = db.collection('Users');
+        
+        collection.find({}).toArray(function(err,result){
+          if(err)
+          {
+            res.send(err);
+          }
+          else if(result.length)
+          {
+            res.render('Users',{"UsersList":result});
+          }
+          else {res.send}
+        })
+      }
+    })
+   
    console.log('s');
   //Extract data from the db in order to check the user existence
   //var queryResult= query the mongoDB
@@ -71,7 +104,7 @@ app.post('/api/seCon/auth', function (req, res) {
 	//Extract data from the db in order to check the user existence
   var userName=req.body.userName;
   var password=req.body.password;
-  var queryResult= query the mongoDB
+ // var queryResult= query the mongoDB
 
 
 
