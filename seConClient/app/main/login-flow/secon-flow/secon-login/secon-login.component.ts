@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-secon-login',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SeconLoginComponent implements OnInit {
 
-  constructor() { }
+  private userName: string;
+
+  constructor(private router: ActivatedRoute) { }
 
   ngOnInit() {
+    this.userName = this.router.snapshot.params['username'];;
   }
 
 }
