@@ -2,7 +2,10 @@ var express = require('express');
 var app = express();
 var sessions = require("client-sessions");
 var bodyParser = require('body-parser')
-var mongodb = require('mongodb');
+var MongoClient = require('mongodb').MongoClient
+var URL = 'mongodb://localhost:27017/Secon';
+
+var status=MongoClient.connect(URL, function(err, db) {console.log('11111');});
 
 
 //Global Vars
@@ -52,11 +55,13 @@ app.use('/seConLogin/:userName',function(req, res, next) {
 /////////////////////////////////////// APIs //////////////////////////////////////////////////////////////
 app.get('/seConLogin/:userName', function (req, res)
  {
-   
-   var MongoClient = require('mongodb').MongoClient;
-    var url = 'mongodb://localhost:27017/Secon';
 
-    MongoClient.connect(url,function(err,db){
+
+    var MongoClient = require('mongodb').MongoClient
+    var URL = 'mongodb://localhost:27017/Secon';
+
+    var status=MongoClient.connect(URL, function(err, db) {console.log('11111');});
+      /*
       if(err){console.log('unable to connect to the server',err);}
       else
       {
@@ -75,7 +80,7 @@ app.get('/seConLogin/:userName', function (req, res)
           else {res.send}
         })
       }
-    })
+    })*/
    
    console.log('s');
   //Extract data from the db in order to check the user existence
