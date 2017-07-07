@@ -1,0 +1,12 @@
+<div class="font-20 bold flex-item-column" flex-item-adjust="start center">
+  <p class="pad-tb-xs">
+    Welcome to seCon Demo Hub!
+  </p>
+  <p class="pad-tb-xs">
+    To Where do you want to login?
+  </p>
+</div>
+
+
+<img *ngFor="let account of accountsMetadata" [routerLink]="['/generic-login', account.id]"
+  class="pointer" [src]="'../../../assets/images/' + account.imageUrl + '.png'">
