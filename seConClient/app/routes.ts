@@ -13,16 +13,22 @@ export const appRoutes: Routes = [
   {
     path: '',
     component: MainComponent,
-    children:[
+    children: [
       {path: '', component: DemoWelcomeComponent},
-      {path: 'generic-login/:accountTypeId', component: GenericLoginComponent},
-      {path: 'secon-flow', component: SeconFlowComponent, canActivate:[],
+      {
+        path: 'generic-login/:accountTypeId', component: GenericLoginComponent,
         children: [
-          { path: '', redirectTo: 'secon-login/:username', pathMatch: 'full' },
-          {path: 'secon-login/:username', component: SeconLoginComponent, canActivate:[]},
-          {path: 'secon-verify', component: SeconVerifyComponent, canActivate:[]}
-        ]},
-      {path: 'succesful-login', component: GenericLoginSuccesComponent, canActivate:[]},
+          {
+            path: 'secon-flow', component: SeconFlowComponent, canActivate: [],
+            children: [
+              {path: '', redirectTo: 'secon-login/:username', pathMatch: 'full'},
+              {path: 'secon-login/:username', component: SeconLoginComponent, canActivate: []},
+              {path: 'secon-verify', component: SeconVerifyComponent, canActivate: []}
+            ]
+          }
+        ]
+      },
+      {path: 'succesful-login', component: GenericLoginSuccesComponent, canActivate: []},
     ]
   },
 

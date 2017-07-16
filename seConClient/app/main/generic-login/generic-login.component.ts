@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from "@angular/router";
+import {Router, ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-generic-login',
@@ -8,13 +8,17 @@ import {Router} from "@angular/router";
 })
 export class GenericLoginComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
   }
 
   onSeconUsernameAuthSuccess(userName){
-    this.router.navigate(['secon-flow/secon-login', userName]);
+    let parentPath = './generic-login/' + this.activatedRoute.snapshot.params['accountTypeId'] + '/secon-flow';
+    this.router.navigate([parentPath, 'secon-login', userName]);
   }
 
 }
+
+
+

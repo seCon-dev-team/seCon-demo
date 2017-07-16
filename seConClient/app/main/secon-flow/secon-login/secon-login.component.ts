@@ -10,10 +10,10 @@ export class SeconLoginComponent implements OnInit {
 
   private userName: string;
 
-  constructor(private router: ActivatedRoute) { }
+  constructor(private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
-    this.userName = this.router.snapshot.params['username'];;
+    this.userName = this.activatedRoute.snapshot.params['username'];
   }
 
 }
