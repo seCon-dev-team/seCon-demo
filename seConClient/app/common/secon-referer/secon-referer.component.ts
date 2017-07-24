@@ -1,4 +1,4 @@
-import {Component, OnInit, Output, EventEmitter} from '@angular/core';
+import {Component, OnInit, Output, EventEmitter, ViewChild, ElementRef} from '@angular/core';
 
 @Component({
   selector: 'app-secon-referer',
@@ -6,25 +6,32 @@ import {Component, OnInit, Output, EventEmitter} from '@angular/core';
   styleUrls: ['secon-referer.component.scss']
 })
 export class SeconRefererComponent implements OnInit {
+  @ViewChild('seconUsernameInput') seconUsernameInput:any ;
 
   private showSeconUsernameInput: boolean = false;
   private display: boolean = false;
-  private seconUsername: string = '';
 
+  private seconUsername: string = '';
   @Output() seconUsernameAuthSuccess = new EventEmitter();
 
   constructor() {
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
-  showSeconUserNameInput(){
+  showSeconUserNameInput() {
     this.showSeconUsernameInput = true;
+    setTimeout(()=>{
+      this.seconUsernameInput.nativeElement.focus();
+    },0);
   }
 
-  sendSeconUserName(){
+  sendSeconUserName() {
     //todo - emit event only after api success
     this.seconUsernameAuthSuccess.emit(this.seconUsername);
+  }
+
+  ngAfterViewInit(){
+    console.log(this.seconUsernameInput.nativeElement);
   }
 }

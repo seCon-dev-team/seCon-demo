@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-secon-verify',
@@ -7,9 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SeconVerifyComponent implements OnInit {
 
-  constructor() { }
+  private clickCounts: number = 0;
+
+  constructor(private router: Router) {
+  }
 
   ngOnInit() {
+  }
+
+  onImageClick(event) {
+
+    console.log(event);
+    this.clickCounts++;
+
+    if(this.clickCounts == 3){
+      //todo - integration with validateClickableImages & complete login after success
+      this.router.navigate(["succesful-login"]);
+
+    }
+
   }
 
 }

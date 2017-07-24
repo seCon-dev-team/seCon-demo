@@ -1,16 +1,18 @@
 <p-dialog closable="true"
           modal="modal"
           rtl="true"
-          header="התחברות באמצעות seCon"
+          header="Login using seCon"
+          positionTop="150"
           [(visible)]="display"
           (onHide)="goBackToLoginPage()">
 
   <router-outlet></router-outlet>
 
   <footer>
-    <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix text-left">
-      <button class="secondary-btn" (click)="cancel()">ביטול</button>
-      <button class="primary-btn" (click)="approve()">אישור</button>
+    <div class="text-left flex-item" flex-item-adjust="start center">
+      <!--<button class="btn btn-primary" (click)="cancel()">OK</button>-->
+      <!--<div class="pad-lr-xs"></div>-->
+      <!--<button class="btn" (click)="approve()">Cancel</button>-->
     </div>
   </footer>
 </p-dialog>

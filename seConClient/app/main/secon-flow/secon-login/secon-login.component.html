@@ -1,3 +1,7 @@
-<p class="font-12 rtl">
-  ברוך הבא {{userName}}
-</p>
+<div class="font-14 flex-item-column" flex-item-adjust="start center">
+  <p class="pad-tb-sm">Welcome {{userName}}!</p>
+  <div class="pad-tb-sm flex-item" flex-item-adjust="start center">
+    <label class="pad-r-xs">Please type in your seCon account password:</label>
+    <input class="font-14" type="password" [(ngModel)]="seConAccountPassword" (keyup.enter)="goToVerfiyFlow()">
+  </div>
+</div>
