@@ -17,7 +17,7 @@ export class SeconLoginComponent implements OnInit {
     this.userName = this.activatedRoute.snapshot.params['username'];
   }
 
-  goToVerfiyFlow(){
+  goToVerifyFlow(){
     //todo - integration to the seCon-login api, and route after success
     this.router.navigate(["../../secon-verify"], { relativeTo: this.activatedRoute });
   }
