@@ -34,7 +34,7 @@
     "typescript": "^2.3.4"
   },
   "devDependencies": {
-    "@angular/cli": "1.0.0-rc.2",
+    "@angular/cli": "1.2.6",
     "@angular/compiler-cli": "4.0.2",
     "@types/jasmine": "2.5.38",
     "@types/node": "~6.0.60",

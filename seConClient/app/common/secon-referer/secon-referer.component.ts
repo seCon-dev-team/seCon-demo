@@ -31,7 +31,4 @@ export class SeconRefererComponent implements OnInit {
     this.seconUsernameAuthSuccess.emit(this.seconUsername);
   }
 
-  ngAfterViewInit(){
-    console.log(this.seconUsernameInput.nativeElement);
-  }
 }
