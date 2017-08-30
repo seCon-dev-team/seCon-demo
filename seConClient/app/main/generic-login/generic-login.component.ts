@@ -17,11 +17,11 @@ export class GenericLoginComponent implements OnInit {
   onSeconUsernameSent(userName){
     this.restApi.verifySeconUsernameEmail(userName)
       .subscribe((response) => {
-        console.log(response);
+        let parentPath = './generic-login/' + this.activatedRoute.snapshot.params['accountTypeId'] + '/secon-flow';
+        this.router.navigate([parentPath, 'secon-login', response.userName]);
       });
 
-    let parentPath = './generic-login/' + this.activatedRoute.snapshot.params['accountTypeId'] + '/secon-flow';
-    this.router.navigate([parentPath, 'secon-login', userName]);
+
   }
 
 }
