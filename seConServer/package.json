@@ -4,10 +4,11 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --proxy-config proxy.conf.json",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
+    "mock": "json-server -p 3000 --delay 1000 --watch mock/db.json --routes mock/routes.json",
     "e2e": "ng e2e"
   },
   "private": true,
@@ -35,7 +36,7 @@
     "zone.js": "^0.8.11"
   },
   "devDependencies": {
-    "@angular/cli": "1.0.0-rc.2",
+    "@angular/cli": "1.2.6",
     "@angular/compiler-cli": "4.0.2",
     "@types/jasmine": "2.5.38",
     "@types/node": "~6.0.60",

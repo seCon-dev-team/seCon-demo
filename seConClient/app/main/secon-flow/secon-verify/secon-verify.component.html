@@ -1,3 +1,15 @@
-<p>
-  secon-verify works!
-</p>
+<div class="font-14 flex-item-column" flex-item-adjust="start center">
+  <p class="pad-tb-sm">Please press on all the Coffee cups</p>
+  <div class="inline-block relative">
+    <img class="pointer" (click)="onImageClick($event)" src="../../../../../seConServer/imgMAP/1/1.png">
+    <div class="inline-block absolute images-repeater-wrap pad-sm flex-item-column" flex-item-adjust="start center">
+      <div class="image-row flex-item" flex-item-adjust="start center" *ngFor="let imgRowIndex of [0,1,2]">
+        <div class="single-image flex-item pad-xs pointer" flex-item-adjust="end end" *ngFor="let imgSingleIndex of [0,1,2]"
+        (click)="onImageClick(imgRowIndex, imgSingleIndex)">
+          <img class="approved-icon" src="../../../../assets/images/approved1.png" width="20" height="20"
+               [ngClass]="{'hide':!booleanMat[imgRowIndex][imgSingleIndex]}">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

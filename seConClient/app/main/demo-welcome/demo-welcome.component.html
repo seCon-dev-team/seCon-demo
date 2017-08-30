@@ -8,5 +8,5 @@
 </div>
 
 
-<img *ngFor="let account of accountsMetadata" [routerLink]="['/generic-login', account.id]"
+<img *ngFor="let account of accountsMetadata" (click)="navigateTologinFlow(account.id)"
   class="pointer" [src]="'../../../assets/images/' + account.imageUrl + '.png'">

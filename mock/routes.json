@@ -1,0 +1,4 @@
+{
+  "/auth/permissionDetails":"/auth/permissionDetails",
+  "/verifySeconUsername/:xyz/": "/verifySeconUsername/"
+}

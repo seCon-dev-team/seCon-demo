@@ -108,6 +108,27 @@ html{
   display: inline-block;
 }
 
+.hide{
+  display: none !important;
+}
+
 .bold{
   font-weight: bold;
 }
+
+.full-height{
+  height: 100%;
+}
+
+.full-width{
+  width:100%;
+}
+
+.relative{
+  position: relative;
+}
+
+.absolute{
+  position: absolute;
+}
+
