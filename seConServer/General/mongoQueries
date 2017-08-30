@@ -3,7 +3,32 @@ commands-
 	cmd->querymongo->>mongo
 
 
+	
+	
+	
+----------------------------------------------PowershellRequest---------------------------------------------------------
+ Invoke-WebRequest http://localhost:3000/api/seCon/auth -Method POST -Body $postParams
+ 
+---------------------------------------------Tables-----------------------------------------------------------
+db.Users.find({email : "daniel@xxx.com",password : "123456"})
+"_id" : ObjectId("59761666bcca0cebc06a3630"), "userName" : "Daniel", "email" : "daniel@xxx.com", "password" : "123456"
+"uniqueWord" : "cracker" }
+db.Users.find({email : "daniel@xxx.com",password : "1234567"})
+"_id" : ObjectId("59761f50bcca0cebc06a3631"), "userName" : "Daniel", "email" : "daniel@xxx.com", "password" : "1234567
+ "uniqueWord" : "attacker" }
+db.Users.find({email : "daniel@xxx.com",password : "1234567"})
 
+
+db.Users.find().pretty()
+{
+        "_id" : ObjectId("594cb5bf40c3598329f486c5"),
+        "userName" : "Avig",
+        "email" : "avig@xxx.com",
+        "password" : "123456",
+        "uniqueWord" : "Hacker"
+}
+
+---------------------------------------------------------------------------------------------------------------
 > db.Users.insert([{"userName":"Avig","email":"avig@xxx.com","password":"123456","uniqueWord":"Hacker"}])
 BulkWriteResult({
         "writeErrors" : [ ],
@@ -54,3 +79,7 @@ BulkWriteResult({
         ]
 }
 >
+
+
+-----------------------------------Progect status-----------------------
+https://www.youtube.com/watch?v=Do_Hsb_Hs3c

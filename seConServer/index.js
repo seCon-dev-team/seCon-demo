@@ -1,16 +1,29 @@
-var express = require('express');
-var app = express();
-var sessions = require("client-sessions");
-var bodyParser = require('body-parser')
-var MongoClient = require('mongodb').MongoClient
-var URL = 'mongodb://localhost:27017/Secon';
+var express        =        require("express");
+var bodyParser     =        require("body-parser");
+var app            =        express();
 
-var status=MongoClient.connect(URL, function(err, db) {console.log('11111');});
+
+//Here we are configuring express to use body-parser as middle-ware.
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+var sessions = require("client-sessions");
+//var bodyParser = require('body-parser')
+
+
+
 
 
 //Global Vars
 var ServerName="localhost:3000"
 var numberOfPeddingPix=7;
+var MongoClient = require('mongodb').MongoClient
+var URL = 'mongodb://localhost:27017/SCDB'
+
+
+
+
+
 
 
 
@@ -33,12 +46,22 @@ app.use(sessions({
 //------------------------------End Initialization--------------------------
 
 
+
+
+app.use('/seConLogin/:email',function(req, res) {
+
+  var email=req.originalUrl.substr(req.originalUrl.lastIndexOf('/')+1,req.originalUrl.length);
+ // var queryResult= query the mongoDB
+  var UserData=DoesUserExist(email);
+  if(UserData != undefined){
+     //res.send(userData.);
+     var d='d';
+     return;
+  }
+})
+
+
 /*
-
-app.use('/seConLogin/:userName',function(req, res, next) {
-  
-
-
 
   if (req.mySession.seenyou) {
     res.setHeader('X-Seen-You', 'true');
@@ -53,14 +76,16 @@ app.use('/seConLogin/:userName',function(req, res, next) {
    res.send();
 });*/
 /////////////////////////////////////// APIs //////////////////////////////////////////////////////////////
-app.get('/seConLogin/:userName', function (req, res)
- {
+//app.get('/seConLogin/:email', function (req, res)
+ //{
 
+  
 
-    var MongoClient = require('mongodb').MongoClient
-    var URL = 'mongodb://localhost:27017/Secon';
+ 
+    
+    //var URL = 'mongodb://localhost:27017/Secon';
 
-    var status=MongoClient.connect(URL, function(err, db) {console.log('11111');});
+    //var status=MongoClient.connect(URL, function(err, db) {console.log('11111');});
       /*
       if(err){console.log('unable to connect to the server',err);}
       else
@@ -82,14 +107,14 @@ app.get('/seConLogin/:userName', function (req, res)
       }
     })*/
    
-   console.log('s');
+   
   //Extract data from the db in order to check the user existence
   //var queryResult= query the mongoDB
   //  if(req.params.userName== queryResult){res.send('{success:'+queryResult+'}');}
   
   // res.send('{failed: user '+queryResult+' does not exist}');
   
- })
+ //})
 
 
 /*
@@ -105,21 +130,26 @@ app.get('/seConLogin/:userName', function (req, res)
 /*******************************************************************Done*************************************/
 
 
-app.post('/api/seCon/auth', function (req, res) {
+
+app.use('/api/seCon/auth', function (req, res) {
 	//Extract data from the db in order to check the user existence
-  var userName=req.body.userName;
+  //var v=express.bodyParser();
+  
+
+  var email=req.body.email;
   var password=req.body.password;
  // var queryResult= query the mongoDB
-
-
+  var UserData=getUserData(email,password);
+  console.log("email=");
+  console.log(UserData);
 
   //if((req.params.userName== queryResult.userName) && (req.params.password== queryResult.password))
-    {
+    {/*
       var queryResult=callForImage();
       console.log(queryResult);
       res.send('{success:'+queryResult+'}');
       
-    }
+    */}
   
  // res.send('{failed: user '+queryResult+' does not exist}');
  // res.send('Hello World!');
@@ -226,8 +256,50 @@ function blendImg(myObj,imgKeyurl)
 
 return myObj;
 }
+//----------------------------------getUserData-------------------------------//
+function getUserData(email,password)
+{
+  var user;
+// Retrieve
+var MongoClient = require('mongodb').MongoClient;
 
 
+   MongoClient.connect(URL, function(err, db) {
+    if (err) return
+    console.log("We are connected");
+    var collection = db.collection('Users')
+    collection.find({email : email,password : password}).toArray(function(err, docs) {
+        console.log(docs[0]);
+        user=docs[0];
+        db.close();
+        })
+  })
+  
+  return user;
+}
+
+//----------------------------------DoesUserExist----------------
+function DoesUserExist(email)
+{
+  var user;
+// Retrieve
+var MongoClient = require('mongodb').MongoClient;
+
+
+   MongoClient.connect(URL, function(err, db) {
+    if (err) return
+    console.log("We are connected");
+    var collection = db.collection('Users')
+    collection.find({email : email}).toArray(function(err, docs) {
+        console.log(docs[0]);
+        user=docs[0];
+       // db.close();
+        
+      })
+      var c='c';
+  })
+  return user;
+}
 
 
 

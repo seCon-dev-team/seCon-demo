@@ -13,8 +13,8 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "^4.1.0",
-    "@angular/common": "^4.2.5",
-    "@angular/compiler": "^4.2.4",
+    "@angular/common": "^4.0.2",
+    "@angular/compiler": "^4.0.2",
     "@angular/core": "^4.2.4",
     "@angular/flex-layout": "^2.0.0-beta.8",
     "@angular/forms": "^4.0.1",
@@ -24,14 +24,15 @@
     "@angular/router": "^4.1.0",
     "body-parser": "^1.17.2",
     "client-sessions": "0.8.0",
+    "connect": "^3.6.2",
     "core-js": "^2.4.1",
     "express": "^4.15.3",
-    "ngx-bootstrap": "^1.7.1",
-    "rxjs": "^5.1.0",
-    "zone.js": "^0.8.11",
-    "primeng": "^4.0.3",
     "font-awesome": "^4.7.0",
-    "typescript": "^2.3.4"
+    "ngx-bootstrap": "^1.7.1",
+    "primeng": "^4.0.3",
+    "rxjs": "^5.1.0",
+    "typescript": "^2.3.4",
+    "zone.js": "^0.8.11"
   },
   "devDependencies": {
     "@angular/cli": "1.0.0-rc.2",
@@ -47,8 +48,7 @@
     "karma-coverage-istanbul-reporter": "^0.2.0",
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
-    "kerberos": "~0.0.17",
-    "mongodb": "^2.2.29",
+    "mongodb": "^2.2.30",
     "protractor": "~5.1.0",
     "ts-node": "~2.0.0",
     "tslint": "~4.5.0"
