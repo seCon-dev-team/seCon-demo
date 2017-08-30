@@ -17,6 +17,7 @@ import { GenericLoginSuccesComponent } from './main/generic-login-succes/generic
 import {DialogModule} from "primeng/primeng";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { SeconFlowComponent } from './main/secon-flow/secon-flow.component';
+import {RestApiService} from "./services/rest-api.service";
 
 
 @NgModule({
@@ -41,7 +42,7 @@ import { SeconFlowComponent } from './main/secon-flow/secon-flow.component';
     RouterModule.forRoot(appRoutes, { useHash: true }),
     DialogModule
   ],
-  providers: [],
+  providers: [RestApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -12,7 +12,7 @@ export class SeconRefererComponent implements OnInit {
   private display: boolean = false;
 
   private seconUsername: string = '';
-  @Output() seconUsernameAuthSuccess = new EventEmitter();
+  @Output() seconUsernameSent = new EventEmitter();
 
   constructor() {
   }
@@ -28,7 +28,7 @@ export class SeconRefererComponent implements OnInit {
 
   sendSeconUserName() {
     //todo - emit event only after api success
-    this.seconUsernameAuthSuccess.emit(this.seconUsername);
+    this.seconUsernameSent.emit(this.seconUsername);
   }
 
 }

@@ -17,7 +17,6 @@ export class SeconFlowComponent implements OnInit {
   }
 
   goBackToLoginPage(){
-    console.log(this.activatedRoute.snapshot.parent.params['accountTypeId']);
     let parentPath = './generic-login/' + this.activatedRoute.snapshot.parent.params['accountTypeId'];
     this.router.navigate([parentPath]);
   }
